@@ -1,0 +1,172 @@
+{
+  "theme_strategy": {
+    "mode": "dark",
+    "rationale": "An industrial, heavy-duty aesthetic pops immensely against a dark charcoal background. Copper/orange accents evoke heat, sparks, and precision metalworking. The mood is 'Swiss Brutalist' meets 'Industrial Elegance'."
+  },
+  "colors": {
+    "background": {
+      "base": "#0F1012",
+      "surface": "#1A1C20",
+      "surface_glass": "rgba(26, 28, 32, 0.6)"
+    },
+    "text": {
+      "primary": "#F3F4F0",
+      "secondary": "#78828A",
+      "muted": "#4B5563"
+    },
+    "brand": {
+      "accent": "#E65C24",
+      "accent_hover": "#D95A2B",
+      "accent_muted": "rgba(230, 92, 36, 0.1)"
+    },
+    "borders": {
+      "subtle": "#2A2D33",
+      "strong": "#4A4D54"
+    }
+  },
+  "typography": {
+    "instructions_to_main_agent": "Import these Google Fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Oswald:wght@500;700&display=swap');",
+    "headings": {
+      "family": "'Oswald', sans-serif",
+      "characteristics": "Tall, confident, industrial, geometric.",
+      "usage": "Use for all H1-H4, and large section numbers (01, 02, etc.). Always use uppercase for section headings."
+    },
+    "body": {
+      "family": "'Manrope', sans-serif",
+      "characteristics": "Clean, grotesque, highly readable.",
+      "usage": "Use for paragraphs, buttons, navigation, and subtext."
+    }
+  },
+  "motion": {
+    "philosophy": "Premium purposeful motion. Smooth momentum scrolling with Lenis. Section scroll-reveals. High tension micro-interactions.",
+    "easing": "[0.22, 1, 0.36, 1]",
+    "durations": {
+      "fast": "0.3s",
+      "medium": "0.6s",
+      "slow": "1.2s"
+    },
+    "stagger_values": 0.1,
+    "kinetic_hero": "Text lines must be wrapped in `overflow-hidden` containers, and the text itself translates up from 100% to 0% on load. Copper accent lines expand from 0 width."
+  },
+  "spacing": {
+    "system": "Generous. Use standard Tailwind scales but multiply by 2 for sections. e.g., py-24 or py-32 for section padding.",
+    "container": "max-w-7xl mx-auto px-6 lg:px-12"
+  },
+  "layouts": {
+    "bento_grid": "For sections like Industries and Gallery, use an asymmetrical grid (e.g., md:grid-cols-12) where images span 4, 8, or 6 columns differently. Never perfect squares.",
+    "manifesto_chapters": "Prepend sections with '01', '02', '03' using large 'Oswald' text in accent color or subtle gray."
+  },
+  "components": {
+    "buttons": "Pill-shaped (rounded-full) or sharp-edged (rounded-none). Let's go with sharp-edged (rounded-sm) for a mechanical/industrial feel. Primary CTA has bg-[#E65C24] text-white.",
+    "cards": "Flat background, 1px subtle border (#2A2D33), no drop shadows (or extremely subtle ambient shadows). Hover causes -translate-y-1 and border-color to shift to accent.",
+    "header": "Sticky glassmorphism. bg-black/60 backdrop-blur-xl. 1px bottom border border-white/10.",
+    "images": "Spotlight clipped frames: Images must have an internal mask or subtle inner border. Hover effects should use grayscale to color reveal, or slight scale transform (1.05) inside an overflow-hidden wrapper."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxtZXRhbCUyMHdvcmtpbmclMjBmYWN0b3J5fGVufDB8fHx8MTc4ODE2MTQ4Nnww&ixlib=rb-4.1.0&q=85",
+      "description": "interior of large industrial factory"
+    },
+    "about_image": {
+      "url": "https://images.unsplash.com/photo-1593106410288-caf65eca7c9d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxtZXRhbCUyMHdvcmtpbmclMjBmYWN0b3J5fGVufDB8fHx8MTc4ODE2MTQ4Nnww&ixlib=rb-4.1.0&q=85",
+      "description": "laser cutting machine emitting bright orange sparks"
+    },
+    "industry_heavy": {
+      "url": "https://images.unsplash.com/photo-1583024011792-b165975b52f5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxoZWF2eSUyMGNvbnN0cnVjdGlvbiUyMGV4Y2F2YXRvcnxlbnwwfHx8fDE3ODgxNjE0ODZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "heavy construction excavator"
+    },
+    "industry_railway": {
+      "url": "https://images.unsplash.com/photo-1598645131357-18f2cd164432?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxyYWlsd2F5JTIwdHJhaW4lMjBtZXRhbCUyMHdoZWVsc3xlbnwwfHx8fDE3ODgxNjE0ODZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "railway train metal wheels"
+    },
+    "industry_pharma": {
+      "url": "https://images.unsplash.com/photo-1513828646384-e4d8ec30d2bb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxwaGFybWFjZXV0aWNhbCUyMG1hY2hpbmV8ZW58MHx8fHwxNzg4MTYxNDg2fDA&ixlib=rb-4.1.0&q=85",
+      "description": "pharmaceutical machine"
+    },
+    "industry_engineering": {
+      "url": "https://images.unsplash.com/photo-1524514587686-e2909d726e9b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwZW5naW5lZXJpbmclMjBnZWFyc3xlbnwwfHx8fDE3ODgxNjE0ODZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "industrial engineering gears"
+    },
+    "central_component": {
+      "url": "https://images.unsplash.com/photo-1666634157070-6fd830fb5672?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxwcmVjaXNpb24lMjBtYWNoaW5lZCUyMGNvbXBvbmVudHxlbnwwfHx8fDE3ODgxNjE0ODZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "precision machined component"
+    },
+    "capabilities_image": {
+      "url": "https://images.unsplash.com/photo-1740209475472-aa7d280f7452?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxjbmMlMjBtYWNoaW5pbmclMjBwcmVjaXNpb24lMjBtZXRhbHxlbnwwfHx8fDE3ODgxNjE0ODZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "cnc machining precision metal"
+    },
+    "gallery_1": {
+      "url": "https://images.unsplash.com/photo-1598299803204-b73796f43289?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxtZXRhbCUyMHdvcmtpbmclMjBmYWN0b3J5fGVufDB8fHx8MTc4ODE2MTQ4Nnww&ixlib=rb-4.1.0&q=85",
+      "description": "man operating industrial machinery"
+    },
+    "gallery_2": {
+      "url": "https://images.pexels.com/photos/7178310/pexels-photo-7178310.jpeg",
+      "description": "Industrial factory with metal pipes"
+    }
+  },
+  "sections_blueprint": [
+    {
+      "name": "01_Hero",
+      "layout": "Full screen height (min-h-screen). Absolute background image with heavy linear gradient overlay to ensure text contrast. Content vertically centered.",
+      "features": "Kinetic masked line-by-line reveal for H1. Primary CTA, secondary CTA, credibility badge."
+    },
+    {
+      "name": "02_Trust_Strip",
+      "layout": "Full width, narrow height (py-4 or py-6).",
+      "features": "Use `react-fast-marquee` (install it). Slow scrolling text separated by bullet points or small copper squares. Background: #E65C24 with #0F1012 text OR #1A1C20 with #F3F4F0 text."
+    },
+    {
+      "name": "03_About",
+      "layout": "Grid 12-columns. Left 5 cols: text narrative. Right 6 cols (offset by 1): Large portrait image with a 1px border and 8px padding (creating a framed look).",
+      "features": "Use '01' as section chapter identifier."
+    },
+    {
+      "name": "04_Industries",
+      "layout": "4 large visual panels. Can be a 2x2 grid or an expanding accordion using framer-motion.",
+      "features": "Each panel has a background image with heavy overlay. Hovering reduces overlay opacity and zooms image slightly."
+    },
+    {
+      "name": "05_WhatWeManufacture",
+      "layout": "Center-heavy. Large circular or square image in the dead center. Radiating lines or surrounding text blocks pointing to the center.",
+      "features": "Showcases the central_component image."
+    },
+    {
+      "name": "06_Capabilities",
+      "layout": "Bento grid. Mix of large text blocks and the capabilities_image.",
+      "features": "Clean typography, lists of machinery and tolerances."
+    },
+    {
+      "name": "07_Quality",
+      "layout": "Dark background section with a subtle parallax texture.",
+      "features": "Headline: 'Quality That Has Stood the Test of Time.' Large quote or statement."
+    },
+    {
+      "name": "08_Gallery",
+      "layout": "Masonry or Bento grid of 4-6 images.",
+      "features": "Images start grayscale, hover turns them to color. Use CSS filter: grayscale(100%)."
+    },
+    {
+      "name": "09_WhyChooseUs",
+      "layout": "List layout. Left column sticky heading, right column scrolling list of reasons.",
+      "features": "No excessive UI boxes. Elegant typography. Large numbers (01, 02) for each point."
+    },
+    {
+      "name": "10_Final_CTA",
+      "layout": "Full width padded container. Center aligned text.",
+      "features": "Huge heading, large copper primary button to open Demo Form modal."
+    },
+    {
+      "name": "11_Footer",
+      "layout": "Multi-column grid.",
+      "features": "Logo, links, contact info, dark minimal aesthetic."
+    }
+  ],
+  "accessibility": {
+    "contrast": "Ensure all text passes WCAG AA. Backgrounds behind text MUST be darkened using bg-black/60 or gradients.",
+    "testing": "All interactive elements (buttons, nav links) MUST have data-testid attributes."
+  },
+  "3d_libraries": {
+    "instructions": "Use Framer Motion for all scroll and hover animations. No heavy 3D canvas needed, rely on high-quality real photography, crisp layout, and fluid Framer Motion transitions."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": "1. Do not use Inter or Roboto for headings, strictly use Oswald. 2. Implement the dark theme strictly. 3. Use 2-3x more padding than usual (py-24 or py-32). 4. Never use placeholder URLs, strictly use the provided image URLs. 5. Include data-testid on every button. 6. The front-end demo quote form should be implemented as a Shadcn Dialog (Modal) triggered by 'Request a Quote' buttons. 7. Do not center-align everything; use deliberate asymmetrical layouts and left-aligned typography. 8. Add `lucide-react` for any necessary icons. 9. Create a highly polished, award-winning level layout."
+}
