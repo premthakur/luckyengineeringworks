@@ -39,6 +39,20 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - Client trust signals added: third-party manufacturer to L&T, JCB, Dynabac (hero subtext, marquee, About trusted-by strip, Why Us)
 - Team (from PDF, not yet on site): Dilip Singh (MD), Aman Singh (Quality & Production), Gaurav Singh (Accounts)
 
+## Iteration 3 (2026-09-05) — Lead capture + team + downloads
+- Quote form rebuilt to spec: Name*, Company Name*, Email*, Phone*, requirement text, optional PDF drawing upload (base64)
+- Google Apps Script pipeline: `/app/scripts/LuckyEngineeringQuoteForm.gs` — appends to Google Sheet "Quote Enquiries", saves PDF to Drive folder, emails contact@luckyengineeringwork.com. Awaits owner deploying it and sharing the Web app URL → set REACT_APP_APPS_SCRIPT_URL in frontend/.env. Until then form runs in demo mode (no-cors POST when live)
+- Meet The Team section added (chapter 08): wireframe org-chart diagram, no photos per owner request — Dilip Singh (MD), Aman Singh (Quality & Production, BE Mech), Gaurav Singh (Accounts, BSc IT), 06 CNC operators, 04 conventional operators
+- Profile & Product Range PDFs hosted at /downloads/ and linked in footer Downloads block
+- Factory imagery stays AI-generated per owner instruction (no team photos)
+
+## Iteration 4 (2026-09-05) — AI product image gallery
+- "What We Manufacture" rebuilt from text lists into a full visual gallery: 4 categories (CNC Turned, Automotive Machined, Hydraulic & Pneumatic, Industrial Machine Components) × 5 products each = 20 product cards
+- 20 custom AI images generated (Gemini Nano Banana) in /app/frontend/public/images/products/ — consistent dark spotlight + copper rim-light style; grayscale-to-color hover cards
+- Custom CNC Machined Parts strip added at section end with Request a Quote button (Manufacture now receives onQuote)
+- Product Range PDF re-downloaded from owner's re-upload
+- Generator script: /app/scripts/generate_product_images.py (idempotent, SKIP-existing; rerun to add more)
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)

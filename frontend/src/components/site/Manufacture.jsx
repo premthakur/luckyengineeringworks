@@ -1,41 +1,70 @@
+import { ArrowRight } from "lucide-react";
 import { Chapter, Reveal } from "./Reveal";
-import { IMAGES } from "@/data/images";
 
-const LEFT = [
-  "Precision Shafts",
-  "Bushings & Couplings",
-  "Pins & Studs",
-  "Spacers & Sleeves",
-  "Threaded Components",
-];
-const RIGHT = [
-  "Hydraulic Fittings",
-  "Valve & Cylinder Parts",
-  "Mounting Flanges",
-  "Bearing Housings",
-  "Custom OEM Parts",
+const CATEGORIES = [
+  {
+    n: "01",
+    name: "CNC Turned Components",
+    items: [
+      ["Precision Shafts", "shafts"],
+      ["Threaded Components", "threaded"],
+      ["Bushings & Couplings", "bushings"],
+      ["Spacers & Sleeves", "spacers"],
+      ["Pins & Studs", "pins"],
+    ],
+  },
+  {
+    n: "02",
+    name: "Automotive Machined Parts",
+    items: [
+      ["Engine Components", "engine"],
+      ["Transmission Shafts", "transmission"],
+      ["Gearbox Components", "gearbox"],
+      ["Steering Components", "steering"],
+      ["Suspension Parts", "suspension"],
+    ],
+  },
+  {
+    n: "03",
+    name: "Hydraulic & Pneumatic Components",
+    items: [
+      ["Hydraulic Fittings", "hydraulic-fittings"],
+      ["Valve Components", "valve"],
+      ["Cylinder Parts", "cylinder"],
+      ["Adapter Fittings", "adapters"],
+      ["Connector Components", "connectors"],
+    ],
+  },
+  {
+    n: "04",
+    name: "Industrial Machine Components",
+    items: [
+      ["Machine Shafts", "machine-shafts"],
+      ["Rollers", "rollers"],
+      ["Bearing Housings", "bearing-housings"],
+      ["Coupling Hubs", "coupling-hubs"],
+      ["Mounting Flanges", "flanges"],
+    ],
+  },
 ];
 
-const CategoryList = ({ items, offset = 0, testPrefix }) => (
-  <ul className="divide-y divide-line border-t border-b border-line">
-    {items.map((item, i) => (
-      <li
-        key={item}
-        data-testid={`${testPrefix}-${i}`}
-        className="group flex items-center justify-between gap-4 py-5 hover:bg-surface/60 transition-colors duration-300 px-2 -mx-2"
-      >
-        <span className="font-display uppercase tracking-[0.08em] text-base lg:text-lg text-bone/85 group-hover:text-copper transition-colors duration-300">
-          {item}
-        </span>
-        <span className="font-display text-xs text-ash group-hover:text-copper transition-colors duration-300">
-          {String(offset + i + 1).padStart(2, "0")}
-        </span>
-      </li>
-    ))}
-  </ul>
+const ProductCard = ({ name, img, testId }) => (
+  <div className="group" data-testid={testId}>
+    <div className="relative overflow-hidden aspect-square border border-line group-hover:border-copper/60 transition-colors duration-500 bg-coal-deep">
+      <img
+        src={img}
+        alt={name}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.06] transition-all duration-[900ms] ease-out"
+      />
+    </div>
+    <p className="mt-3 text-[12px] tracking-[0.14em] uppercase text-steel group-hover:text-bone transition-colors duration-300 font-medium">
+      {name}
+    </p>
+  </div>
 );
 
-export const Manufacture = () => (
+export const Manufacture = ({ onQuote }) => (
   <section id="manufacture" className="py-24 lg:py-36" data-testid="manufacture-section">
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <div className="max-w-2xl mb-16">
@@ -51,30 +80,59 @@ export const Manufacture = () => (
         </Reveal>
       </div>
 
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-        <Reveal className="lg:col-span-3 order-2 lg:order-1" delay={0.1}>
-          <CategoryList items={LEFT} testPrefix="manufacture-item-left" />
-        </Reveal>
-
-        <Reveal className="lg:col-span-6 order-1 lg:order-2" delay={0.05} y={60}>
-          <div className="img-frame" data-testid="manufacture-central-image">
-            <div className="overflow-hidden">
-              <img
-                src={IMAGES.components}
-                alt="Arrangement of precision machined shafts, bushes, pins and flanges"
-                className="w-full aspect-[4/3] lg:aspect-[3/3.2] object-cover hover:scale-105 transition-transform duration-[1200ms]"
-              />
+      <div className="space-y-16 lg:space-y-20">
+        {CATEGORIES.map((cat) => (
+          <Reveal key={cat.n}>
+            <div data-testid={`manufacture-category-${cat.n}`}>
+              <div className="flex items-baseline gap-5 mb-8">
+                <span className="font-display text-copper text-sm tracking-[0.3em]">{cat.n}</span>
+                <h3 className="font-display font-semibold uppercase text-2xl lg:text-3xl text-bone">
+                  {cat.name}
+                </h3>
+                <span className="hidden sm:block flex-1 h-px bg-line" />
+                <span className="hidden sm:block text-[11px] tracking-[0.25em] uppercase text-ash">
+                  {cat.items.length} Product Lines
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
+                {cat.items.map(([name, key]) => (
+                  <ProductCard
+                    key={key}
+                    name={name}
+                    img={`/images/products/${key}.jpg`}
+                    testId={`product-card-${key}`}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
-          <p className="mt-4 text-xs text-ash text-center tracking-[0.15em] uppercase">
-            Turned · Milled · Ground · Assembled
-          </p>
-        </Reveal>
-
-        <Reveal className="lg:col-span-3 order-3" delay={0.2}>
-          <CategoryList items={RIGHT} offset={LEFT.length} testPrefix="manufacture-item-right" />
-        </Reveal>
+          </Reveal>
+        ))}
       </div>
+
+      <Reveal delay={0.1}>
+        <div
+          className="mt-20 lg:mt-24 border border-line px-8 py-10 lg:px-12 flex flex-col lg:flex-row lg:items-center gap-8 justify-between"
+          data-testid="custom-cnc-strip"
+        >
+          <div>
+            <span className="text-[10px] tracking-[0.35em] uppercase text-copper font-semibold">
+              Custom CNC Machined Parts
+            </span>
+            <p className="mt-3 font-display uppercase text-xl lg:text-2xl text-bone leading-snug max-w-2xl">
+              Prototype Development · Tight-Tolerance Machining · Batch
+              Production · OEM Custom Parts
+            </p>
+          </div>
+          <button
+            onClick={onQuote}
+            data-testid="manufacture-quote-button"
+            className="group inline-flex items-center gap-3 bg-copper hover:bg-copper-hover text-white text-sm font-semibold tracking-[0.12em] uppercase px-8 py-4 transition-colors duration-300 shrink-0"
+          >
+            Request a Quote
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </button>
+        </div>
+      </Reveal>
     </div>
   </section>
 );

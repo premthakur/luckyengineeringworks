@@ -11,6 +11,7 @@ import { Capabilities } from "@/components/site/Capabilities";
 import { Quality } from "@/components/site/Quality";
 import { Gallery } from "@/components/site/Gallery";
 import { WhyUs } from "@/components/site/WhyUs";
+import { Team } from "@/components/site/Team";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { QuoteModal } from "@/components/site/QuoteModal";
@@ -42,11 +43,12 @@ function App() {
         <Marquee />
         <About />
         <Industries />
-        <Manufacture />
+        <Manufacture onQuote={openQuote} />
         <Capabilities />
         <Quality />
         <Gallery />
         <WhyUs onQuote={openQuote} />
+        <Team />
         <FinalCTA onQuote={openQuote} />
       </main>
       <Footer />

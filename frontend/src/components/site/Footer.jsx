@@ -37,6 +37,31 @@ export const Footer = () => (
           <p className="mt-6 text-[11px] tracking-[0.3em] uppercase text-ash">
             CNC Precision Components · Since 2010
           </p>
+          <div className="mt-8">
+            <h4 className="text-[11px] tracking-[0.3em] uppercase text-ash font-semibold">Downloads</h4>
+            <div className="mt-4 space-y-3">
+              <a
+                href="/downloads/Lucky-Engineering-Works-Profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-download-profile"
+                className="flex items-center gap-3 text-sm text-steel hover:text-copper transition-colors duration-300"
+              >
+                <span className="w-1.5 h-1.5 bg-copper shrink-0" />
+                Company Profile (PDF)
+              </a>
+              <a
+                href="/downloads/Lucky-Engineering-Product-Range.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-download-products"
+                className="flex items-center gap-3 text-sm text-steel hover:text-copper transition-colors duration-300"
+              >
+                <span className="w-1.5 h-1.5 bg-copper shrink-0" />
+                Product Range (PDF)
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="md:col-span-2">
