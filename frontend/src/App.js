@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Lenis from "lenis";
+import { AnimatePresence } from "framer-motion";
 import "@/App.css";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
@@ -15,10 +16,17 @@ import { Team } from "@/components/site/Team";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { QuoteModal } from "@/components/site/QuoteModal";
+import { Preloader } from "@/components/site/Preloader";
 
 function App() {
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const openQuote = useCallback(() => setQuoteOpen(true), []);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 2100);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.15, anchors: true });
@@ -36,10 +44,11 @@ function App() {
 
   return (
     <div className="App bg-coal text-bone font-sans antialiased">
+      <AnimatePresence>{loading && <Preloader />}</AnimatePresence>
       <div className="grain" aria-hidden />
       <Navbar onQuote={openQuote} />
       <main>
-        <Hero onQuote={openQuote} />
+        <Hero onQuote={openQuote} start={!loading} />
         <Marquee />
         <About />
         <Industries />

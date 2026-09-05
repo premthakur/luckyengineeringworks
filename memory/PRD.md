@@ -53,6 +53,11 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - Product Range PDF re-downloaded from owner's re-upload
 - Generator script: /app/scripts/generate_product_images.py (idempotent, SKIP-existing; rerun to add more)
 
+## Iteration 5 (2026-09-05) — Animated landing experience
+- Branded intro preloader (Preloader.jsx): LEW mark, letter-by-letter "LUCKY ENGINEERING" reveal, copper progress line, slides away after ~2.1s; hero animations gated on preloader completion (start prop)
+- Hero upgrades: mouse-move 3D parallax (spring-smoothed, image and headline drift in opposite directions), slow 28s Ken Burns breathing zoom on hero image, rotating engineering dial SVG (dashed rings + tick marks, 70s rotation), pulsing copper credibility dot, shimmering gradient on "the World." (text-shimmer utility), animated copper scroll-cue line
+- All hero data-testids preserved; zero console errors on verification
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)

@@ -85,6 +85,20 @@ html.lenis, html.lenis body {
         padding: 0.75rem;
         background: rgba(26, 28, 32, 0.4);
     }
+    .text-shimmer {
+        background: linear-gradient(90deg, #E65C24 0%, #FFB08A 50%, #E65C24 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 4.5s linear infinite;
+    }
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
 }
 
 @layer base {
