@@ -1,7 +1,7 @@
 const ITEMS = [
-  "30+ Years of Experience",
-  "Precision Engineering",
-  "Multiple Industries Served",
+  "15+ Years of Experience",
+  "CNC Precision Components",
+  "Trusted by L&T, JCB & Dynabac",
   "Quality-Focused Manufacturing",
 ];
 
@@ -9,7 +9,7 @@ export const Marquee = () => (
   <section
     className="bg-copper text-coal overflow-hidden py-4 select-none"
     data-testid="trust-marquee"
-    aria-label="30 plus years of experience, precision engineering, multiple industries served, quality-focused manufacturing"
+    aria-label="15 plus years of experience, CNC precision components, trusted by L&T, JCB and Dynabac, quality-focused manufacturing"
   >
     <div className="flex w-max animate-marquee">
       {[0, 1].map((dup) => (

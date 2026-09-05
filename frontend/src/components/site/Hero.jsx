@@ -57,7 +57,7 @@ export const Hero = ({ onQuote }) => {
         >
           <span className="w-2 h-2 bg-copper" />
           <span className="text-[11px] md:text-xs tracking-[0.4em] uppercase text-bone/80 font-medium">
-            30+ Years of Engineering Excellence
+            15+ Years of Engineering Excellence
           </span>
         </motion.div>
 
@@ -89,9 +89,10 @@ export const Hero = ({ onQuote }) => {
           className="mt-8 max-w-xl text-sm md:text-base text-steel leading-relaxed"
           data-testid="hero-subtext"
         >
-          30+ years of engineering expertise delivering reliable precision
-          components for heavy equipment, railways, pharmaceutical machinery,
-          and industrial applications.
+          Since 2010, delivering reliable CNC precision components for heavy
+          equipment, railways, pharmaceutical machinery, and industrial
+          applications — trusted as a third-party manufacturer by brands like
+          L&T, JCB and Dynabac.
         </motion.p>
 
         <motion.div

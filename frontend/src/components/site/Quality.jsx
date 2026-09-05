@@ -5,7 +5,7 @@ import { IMAGES } from "@/data/images";
 
 const PILLARS = [
   ["Consistent Quality", "The same standard on the first part and the ten-thousandth."],
-  ["Experienced Engineering Team", "Decades of machining judgement behind every setup."],
+  ["Experienced Engineering Team", "Deep machining judgement behind every setup."],
   ["Inspection & Quality Control", "Every batch measured, documented and verified."],
   ["Long-Term Relationships", "Customers who have trusted us for years — some for decades."],
 ];

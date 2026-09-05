@@ -2,13 +2,13 @@ import { Chapter, Reveal } from "./Reveal";
 import { IMAGES } from "@/data/images";
 
 const CAPS = [
-  ["CNC Machining", "Multi-axis machining of complex geometries"],
-  ["Precision Turning", "Tight-tolerance turned parts and shafts"],
-  ["Milling", "Precision milled components and features"],
-  ["Fabrication", "Welded and fabricated assemblies"],
-  ["Component Finishing", "Grinding and surface finishing processes"],
+  ["CNC Turning", "Precision shafts, pins and threaded components"],
+  ["CNC Milling", "Prismatic parts and complex features"],
+  ["Traub & Automat Turning", "High-volume small precision parts"],
+  ["Conventional Lathe Work", "Job-work and large-diameter turning"],
+  ["Drilling & Tapping", "Holes, threads and secondary operations"],
   ["Inspection & Quality Control", "Measured, documented, verified"],
-  ["Custom Component Manufacturing", "Built-to-print — batch or prototype"],
+  ["Custom Component Manufacturing", "Prototype development to batch production"],
 ];
 
 export const Capabilities = () => (
@@ -44,8 +44,11 @@ export const Capabilities = () => (
                 On the Shop Floor
               </span>
               <p className="mt-3 text-sm text-bone/70 max-w-xs">
-                Modern CNC machining backed by three decades of hands-on
-                engineering judgement.
+                A 1,500 sq. ft. shop floor with CNC lathes, Traub automats and
+                conventional machines — component capacity up to 40 tons.
+              </p>
+              <p className="mt-3 text-[10px] tracking-[0.2em] uppercase text-bone/40 max-w-xs leading-relaxed">
+                4× CNC Lathe 250×500 · 10× Traub · 7× Conventional Lathe · Drilling · Tapping · Bandsaw
               </p>
             </div>
           </div>

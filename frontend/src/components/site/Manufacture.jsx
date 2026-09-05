@@ -2,17 +2,18 @@ import { Chapter, Reveal } from "./Reveal";
 import { IMAGES } from "@/data/images";
 
 const LEFT = [
-  "Precision Machined Components",
-  "CNC Components",
-  "Shafts",
-  "Bushes",
-  "Pins",
+  "Precision Shafts",
+  "Bushings & Couplings",
+  "Pins & Studs",
+  "Spacers & Sleeves",
+  "Threaded Components",
 ];
 const RIGHT = [
-  "Flanges",
-  "Custom Metal Parts",
-  "Assemblies",
-  "Engineered Components",
+  "Hydraulic Fittings",
+  "Valve & Cylinder Parts",
+  "Mounting Flanges",
+  "Bearing Housings",
+  "Custom OEM Parts",
 ];
 
 const CategoryList = ({ items, offset = 0, testPrefix }) => (

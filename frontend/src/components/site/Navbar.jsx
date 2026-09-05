@@ -38,12 +38,12 @@ export const Navbar = ({ onQuote }) => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
           <a href="#top" data-testid="nav-logo" className="flex items-center gap-3 group">
-            <span className="w-2.5 h-2.5 bg-copper transition-transform duration-500 group-hover:rotate-45" />
-            <span className="font-display font-semibold text-lg tracking-[0.22em] text-bone">
-              PRECITECH
+            <span className="w-9 h-9 border-2 border-copper flex items-center justify-center font-display font-semibold text-copper text-[13px] tracking-[0.1em] transition-colors duration-500 group-hover:bg-copper group-hover:text-coal">
+              LEW
             </span>
-            <span className="hidden xl:block text-[10px] tracking-[0.35em] text-steel mt-0.5">
-              EST. 1993
+            <span className="font-display font-semibold text-sm tracking-[0.2em] text-bone leading-tight">
+              LUCKY ENGINEERING
+              <span className="block text-[9px] tracking-[0.35em] text-steel font-medium">WORKS · EST. 2010</span>
             </span>
           </a>
 
@@ -92,7 +92,7 @@ export const Navbar = ({ onQuote }) => {
             data-testid="mobile-menu"
           >
             <div className="h-20 px-6 flex items-center justify-between">
-              <span className="font-display font-semibold text-lg tracking-[0.22em]">PRECITECH</span>
+              <span className="font-display font-semibold text-lg tracking-[0.22em]">LEW · LUCKY ENGINEERING</span>
               <button
                 onClick={() => setOpen(false)}
                 data-testid="mobile-menu-close"

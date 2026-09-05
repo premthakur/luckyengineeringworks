@@ -31,6 +31,14 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 ## Verified
 - Full-page screenshot pass (all sections), quote modal submit → success state, zero console errors, all stock image URLs return 200.
 
+## Iteration 2 (2026-08-31) — Real brand identity applied
+- Rebranded from placeholder "Precitech" to real company: LUCKY ENGINEERING WORKS (LEW mark in copper square), established 2010, Vasai East, Maharashtra
+- Facts sourced from uploaded company profile + product range PDFs: 15+ years (not 30+), CNC turning/milling, Traub automats, conventional lathe/drilling/tapping, 1,500 sq. ft. facility, component capacity up to 40 tons
+- Real contact in footer: Gala No. 04, Ganesh Industrial Estate, Near Parmar Talav, Dhaniv, Vasai Phata, Vasai East, Vasai-Virar, Maharashtra 401208; +91 82752 92405 / +91 99224 07816; contact@luckyengineeringwork.com; Google Maps directions link
+- Product range lists updated to real catalogue (shafts, bushings & couplings, pins & studs, spacers & sleeves, threaded components, hydraulic fittings, valve & cylinder parts, mounting flanges, bearing housings, custom OEM parts)
+- Client trust signals added: third-party manufacturer to L&T, JCB, Dynabac (hero subtext, marquee, About trusted-by strip, Why Us)
+- Team (from PDF, not yet on site): Dilip Singh (MD), Aman Singh (Quality & Production), Gaurav Singh (Accounts)
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)

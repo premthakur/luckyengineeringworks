@@ -2,10 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 import { Chapter, Reveal } from "./Reveal";
 
 const REASONS = [
-  ["30+ Years of Experience", "Three decades of quietly solving hard machining problems for demanding industries."],
-  ["Precision-Focused Manufacturing", "Tight tolerances held consistently — batch after batch, year after year."],
-  ["Multi-Industry Expertise", "Heavy equipment, railways, pharmaceutical and industrial machinery under one roof."],
-  ["Flexible Custom Manufacturing", "From one-off prototypes to recurring production batches, built to your drawing."],
+  ["15+ Years of Experience", "A decade and a half of quietly solving hard machining problems for demanding industries."],
+  ["Trusted by Leading Brands", "Third-party manufacturing partner to L&T, JCB, Dynabac and other major OEMs."],
+  ["Multi-Industry Expertise", "Construction & drilling equipment, mining, automobiles and industrial machinery under one roof."],
+  ["Flexible Custom Manufacturing", "From prototype development to batch production, built to your drawing."],
   ["Consistent Quality & Reliability", "Inspected, documented and delivered on schedule — a partner you can plan around."],
 ];
 
