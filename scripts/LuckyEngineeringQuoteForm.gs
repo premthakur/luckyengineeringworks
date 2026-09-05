@@ -12,7 +12,7 @@
  *  1. Go to https://sheets.google.com and create a new blank Sheet.
  *     Name it anything, e.g. "LEW Quote Enquiries".
  *     Copy its ID from the URL:
- *     https://docs.google.com/spreadsheets/d/THIS_LONG_PART_IS_THE_ID/edit
+ *     https://docs.google.com/spreadsheets/d/13k3XaKXVXOUbQ1nAHtmmFFtnEz_hvOsyQEa67ohii6o/edit
  *  2. Go to https://drive.google.com and create a folder named
  *     "LEW Drawing Uploads". Open it and copy its ID from the URL:
  *     https://drive.google.com/drive/folders/THIS_PART_IS_THE_ID
@@ -32,8 +32,8 @@
  * email in your inbox. You can re-check the Sheet anytime.
  *************************************************/
 
-const SPREADSHEET_ID = "PASTE_YOUR_SHEET_ID_HERE";
-const DRIVE_FOLDER_ID = "PASTE_YOUR_DRIVE_FOLDER_ID_HERE";
+const SPREADSHEET_ID = "13k3XaKXVXOUbQ1nAHtmmFFtnEz_hvOsyQEa67ohii6o";
+const DRIVE_FOLDER_ID = "10T4wvZzXzV5O_ri4GNk3utPCwzrpsbHi";
 const SHEET_NAME = "Quote Enquiries";
 const NOTIFY_EMAIL = "contact@luckyengineeringwork.com";
 
@@ -72,21 +72,26 @@ function doPost(e) {
       fileUrl,
     ]);
 
-    // 4. Email notification
-    const subject = "New Quote Enquiry — " + (data.name || "Website");
-    const body =
-      "A new enquiry has arrived from the Lucky Engineering Works website.\n\n" +
-      "Name: " + (data.name || "-") + "\n" +
-      "Company: " + (data.company || "-") + "\n" +
-      "Email: " + (data.email || "-") + "\n" +
-      "Phone: " + (data.phone || "-") + "\n\n" +
-      "Requirement:\n" + (data.requirement || "-") + "\n\n" +
-      "Drawing (PDF): " + (fileUrl || "Not uploaded") + "\n\n" +
-      "All enquiries: " + ss.getUrl();
-    MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+    // 4. Email notification (a mail failure never loses the enquiry)
+    let mailSent = true;
+    try {
+      const subject = "New Quote Enquiry — " + (data.name || "Website");
+      const body =
+        "A new enquiry has arrived from the Lucky Engineering Works website.\n\n" +
+        "Name: " + (data.name || "-") + "\n" +
+        "Company: " + (data.company || "-") + "\n" +
+        "Email: " + (data.email || "-") + "\n" +
+        "Phone: " + (data.phone || "-") + "\n\n" +
+        "Requirement:\n" + (data.requirement || "-") + "\n\n" +
+        "Drawing (PDF): " + (fileUrl || "Not uploaded") + "\n\n" +
+        "All enquiries: " + ss.getUrl();
+      MailApp.sendEmail(NOTIFY_EMAIL, subject, body);
+    } catch (mailErr) {
+      mailSent = false;
+    }
 
     return ContentService
-      .createTextOutput(JSON.stringify({ result: "success" }))
+      .createTextOutput(JSON.stringify({ result: "success", emailSent: mailSent }))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
     return ContentService
@@ -100,4 +105,23 @@ function doGet() {
   return ContentService
     .createTextOutput(JSON.stringify({ result: "ok", service: "LEW Quote Form" }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+/*************************************************
+ * ONE-TIME AUTHORISATION FOR EMAIL
+ * If enquiries arrive in the Sheet but you get no email:
+ *  1. In the toolbar above, open the function dropdown and
+ *     select  authorizeMe
+ *  2. Press  Run (the play button)
+ *  3. A permissions window opens → choose your Google account
+ *     → Advanced → Go to project → Allow
+ *  4. You will receive a confirmation email — done. The live
+ *     form now emails you automatically. No need to redeploy.
+ *************************************************/
+function authorizeMe() {
+  MailApp.sendEmail(
+    NOTIFY_EMAIL,
+    "LEW Quote Form — email connected",
+    "If you are reading this, email notifications for website enquiries are active."
+  );
 }

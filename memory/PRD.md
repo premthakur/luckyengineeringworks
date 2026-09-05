@@ -58,6 +58,12 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - Hero upgrades: mouse-move 3D parallax (spring-smoothed, image and headline drift in opposite directions), slow 28s Ken Burns breathing zoom on hero image, rotating engineering dial SVG (dashed rings + tick marks, 70s rotation), pulsing copper credibility dot, shimmering gradient on "the World." (text-shimmer utility), animated copper scroll-cue line
 - All hero data-testids preserved; zero console errors on verification
 
+## Iteration 6 (2026-09-05) — Quote form connected to Google
+- REACT_APP_APPS_SCRIPT_URL set in frontend/.env (owner deployed Apps Script web app); form now runs in LIVE mode (no-cors POST)
+- Verified: browser form submits with PDF attachment → success state; curl test confirmed doPost executes (Sheet row appended)
+- KNOWN ISSUE: MailApp.sendEmail blocked — "send_mail" scope not granted during owner's deploy. Fix documented in updated .gs (new authorizeMe function to run once in editor; MailApp wrapped in try/catch so emails can't lose enquiries). Owner must re-paste updated script OR run any function in the editor and approve the mail permission. Sheet + Drive saving works regardless.
+- Owner should delete test rows from the Sheet (Ramesh Patil / Curl Pipeline Test entries)
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)
