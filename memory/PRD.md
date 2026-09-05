@@ -64,6 +64,11 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - KNOWN ISSUE: MailApp.sendEmail blocked — "send_mail" scope not granted during owner's deploy. Fix documented in updated .gs (new authorizeMe function to run once in editor; MailApp wrapped in try/catch so emails can't lose enquiries). Owner must re-paste updated script OR run any function in the editor and approve the mail permission. Sheet + Drive saving works regardless.
 - Owner should delete test rows from the Sheet (Ramesh Patil / Curl Pipeline Test entries)
 
+## Iteration 7 (2026-09-05) — Sheet row visibility fix
+- Owner reported: PDF arrived in Drive but no row visible in the Sheet. Root cause: script wrote rows to an auto-created "Quote Enquiries" tab; owner was viewing the default tab. Verified via the deployed script's own response — the only failure is MailApp (mail scope), which runs AFTER appendRow, so rows were being written all along
+- Fix: script now writes to the FIRST (default) tab of the spreadsheet and auto-adds headers only when empty; removed SHEET_NAME. Owner must re-paste scripts/LuckyEngineeringQuoteForm.gs into their Apps Script project (their real Sheet/Drive IDs are already filled in)
+- Note: testing_agent subagent not available in this environment; verification was done against the live deployment's JSON responses
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)

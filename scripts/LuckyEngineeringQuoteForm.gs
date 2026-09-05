@@ -34,18 +34,17 @@
 
 const SPREADSHEET_ID = "13k3XaKXVXOUbQ1nAHtmmFFtnEz_hvOsyQEa67ohii6o";
 const DRIVE_FOLDER_ID = "10T4wvZzXzV5O_ri4GNk3utPCwzrpsbHi";
-const SHEET_NAME = "Quote Enquiries";
 const NOTIFY_EMAIL = "contact@luckyengineeringwork.com";
 
 function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
 
-    // 1. Open the sheet (create the tab + headers on first run)
+    // 1. Open the spreadsheet and write to the FIRST (default) tab —
+    //    the header row is added automatically on the first enquiry.
     const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    let sheet = ss.getSheetByName(SHEET_NAME);
-    if (!sheet) {
-      sheet = ss.insertSheet(SHEET_NAME);
+    const sheet = ss.getSheets()[0];
+    if (sheet.getLastRow() === 0) {
       sheet.appendRow(["Timestamp", "Name", "Company", "Email", "Phone", "Requirement", "Drawing Link"]);
       sheet.getRange(1, 1, 1, 7).setFontWeight("bold");
     }
