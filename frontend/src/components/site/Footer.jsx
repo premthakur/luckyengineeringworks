@@ -132,7 +132,6 @@ export const Footer = () => (
         <span data-testid="footer-copyright">
           © 2026 Lucky Engineering Works. All rights reserved.
         </span>
-        <span className="tracking-[0.2em] uppercase">Website Prototype</span>
       </div>
     </div>
   </footer>
