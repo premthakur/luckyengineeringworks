@@ -62,7 +62,7 @@ export const Navbar = ({ onQuote }) => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4 ml-10 lg:ml-20">
+          <div className="flex items-center gap-4 ml-9">
             <button
               onClick={onQuote}
               data-testid="nav-quote-button"
