@@ -6,6 +6,7 @@ const EXPLORE = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "Quality", href: "#quality" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Blog", href: "#blog" },
 ];
 
 const INDUSTRIES = [

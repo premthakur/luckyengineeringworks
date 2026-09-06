@@ -17,6 +17,7 @@ import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 import { QuoteModal } from "@/components/site/QuoteModal";
 import { Preloader } from "@/components/site/Preloader";
+import { Blog } from "@/components/site/Blog";
 
 function App() {
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -58,6 +59,7 @@ function App() {
         <Gallery />
         <WhyUs onQuote={openQuote} />
         <Team />
+        <Blog />
         <FinalCTA onQuote={openQuote} />
       </main>
       <Footer />

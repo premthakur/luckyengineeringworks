@@ -69,6 +69,12 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - Fix: script now writes to the FIRST (default) tab of the spreadsheet and auto-adds headers only when empty; removed SHEET_NAME. Owner must re-paste scripts/LuckyEngineeringQuoteForm.gs into their Apps Script project (their real Sheet/Drive IDs are already filled in)
 - Note: testing_agent subagent not available in this environment; verification was done against the live deployment's JSON responses
 
+## Iteration 8 (2026-09-06) — Blog with 4 articles
+- New "Notes on Precision" blog section (chapter 09, id #blog) with 4 full articles: Why Precision Machining Matters in Heavy Equipment; CNC Turning vs Conventional Lathe; 5 Things to Check Before Choosing a Component Manufacturing Partner; From Drawing to Delivery
+- 4 AI-generated cover images in /app/frontend/public/images/blog/ (script: generate_blog_images.py)
+- Each card opens a full in-page article reader (overlay with cover, tag, body); cards grayscale-to-color hover. Blog added to navbar and footer Explore links
+- Verified: 4/4 images load, overlay opens/closes, article content readable
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)

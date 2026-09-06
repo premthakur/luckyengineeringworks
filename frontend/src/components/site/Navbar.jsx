@@ -10,6 +10,7 @@ const LINKS = [
   { label: "Quality", href: "#quality" },
   { label: "Gallery", href: "#gallery" },
   { label: "Team", href: "#team" },
+  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
