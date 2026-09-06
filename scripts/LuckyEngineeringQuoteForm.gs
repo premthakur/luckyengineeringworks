@@ -34,7 +34,7 @@
 
 const SPREADSHEET_ID = "13k3XaKXVXOUbQ1nAHtmmFFtnEz_hvOsyQEa67ohii6o";
 const DRIVE_FOLDER_ID = "10T4wvZzXzV5O_ri4GNk3utPCwzrpsbHi";
-const NOTIFY_EMAIL = "contact@luckyengineeringwork.com";
+const NOTIFY_EMAIL = "ppthakur8483@gmail.com";
 
 function doPost(e) {
   try {

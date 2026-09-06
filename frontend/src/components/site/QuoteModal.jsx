@@ -160,7 +160,21 @@ export const QuoteModal = ({ open, onClose }) => {
                   </div>
                   <div>
                     <label className={labelCls} htmlFor="q-phone">Phone *</label>
-                    <input id="q-phone" name="phone" required placeholder="+91" className={inputCls} data-testid="quote-phone-input" />
+                    <input
+                      id="q-phone"
+                      name="phone"
+                      type="tel"
+                      inputMode="tel"
+                      required
+                      placeholder="+91 98765 43210"
+                      pattern="[0-9+\-\s]{10,16}"
+                      title="Please enter a valid phone number (10–15 digits)"
+                      onChange={(e) => {
+                        e.target.value = e.target.value.replace(/[^0-9+\-\s]/g, "");
+                      }}
+                      className={inputCls}
+                      data-testid="quote-phone-input"
+                    />
                   </div>
                   <div className="sm:col-span-2">
                     <label className={labelCls} htmlFor="q-message">Requirement</label>
