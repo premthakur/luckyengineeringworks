@@ -81,6 +81,12 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - Round prev/next arrows at edges, 01—04 indicator with animated progress bar, mouse parallax on slide images, preloader gating preserved
 - Verified: auto-advance 01→02, next →03, prev →02, quote modal opens from hero
 
+## Iteration 10 (2026-09-06) — Application-machine hero slides
+- Replaced repetitive component close-ups in hero slider with end-use machines (owner request): slide 2 = excavator at construction site (JCB & Heavy Equipment), slide 3 = railway locomotive (Railways), slide 4 = pharmaceutical processing machinery. Slide 1 (wide factory) kept. New AI images: slide-excavator.jpg, slide-railway.jpg, slide-pharma.jpg (script: generate_slide_images.py)
+- Slide copy updated to match each application
+- NOTE: excavator image contains a faint AI-generated "CAT"-like logo — offered to regenerate without brand marks
+- Verified: 4/4 slides load (0 broken), arrows + auto-advance work
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)

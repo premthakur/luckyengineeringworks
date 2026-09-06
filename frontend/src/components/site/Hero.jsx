@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { EASE } from "./Reveal";
-import { IMAGES } from "@/data/images";
 
 const SLIDES = [
   {
@@ -12,22 +11,22 @@ const SLIDES = [
     text: "Since 2010, delivering reliable precision components for heavy equipment, railways, pharmaceutical machinery, and industrial applications.",
   },
   {
-    img: IMAGES.hero,
-    kicker: "Machined to Drawing",
-    title: "Components Made to Last — Batch After Batch",
-    text: "CNC turning, milling and conventional machining with tight tolerances, documented inspection and dependable delivery.",
+    img: "/images/slide-excavator.jpg",
+    kicker: "JCB & Heavy Equipment",
+    title: "Components That Keep Heavy Machines Working",
+    text: "Pins, bushes, shafts and machined parts built to survive the toughest construction and mining sites.",
   },
   {
-    img: IMAGES.cnc,
-    kicker: "Turning · Milling · Traub · Fabrication",
-    title: "Complete Machining Capability Under One Roof",
-    text: "From raw stock to finished component — CNC lathes, Traub automats, conventional machines, drilling, tapping and finishing.",
+    img: "/images/slide-railway.jpg",
+    kicker: "Railways",
+    title: "Engineered for the Demands of the Rail",
+    text: "Reliable, inspected components for railway applications — where consistency is not negotiable.",
   },
   {
-    img: IMAGES.rail,
-    kicker: "Third-Party Manufacturing Partner",
-    title: "Trusted by L&T, JCB and Dynabac",
-    text: "Quiet, consistent engineering work for India's most demanding equipment manufacturers — at competitive pricing.",
+    img: "/images/slide-pharma.jpg",
+    kicker: "Pharmaceutical & Industrial Machinery",
+    title: "Precision Parts for Processing Machinery",
+    text: "Clean, tight-tolerance components for pharmaceutical and industrial processing equipment.",
   },
 ];
 
