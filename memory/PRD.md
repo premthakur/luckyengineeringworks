@@ -75,6 +75,12 @@ Hero with kinetic headline, trust marquee, About, 4 industry panels, What We Man
 - Each card opens a full in-page article reader (overlay with cover, tag, body); cards grayscale-to-color hover. Blog added to navbar and footer Explore links
 - Verified: 4/4 images load, overlay opens/closes, article content readable
 
+## Iteration 9 (2026-09-06) — Sliding hero (shreelaxmiengg.in-style)
+- Hero rebuilt as a 4-slide full-screen auto carousel (6s per slide, crossfade + per-slide Ken Burns zoom): slide 1 = new AI-generated wide factory floor shot (/images/hero-factory.jpg), slide 2 = macro gear/shaft, slide 3 = CNC milling, slide 4 = railway components + L&T/JCB/Dynabac trust message
+- Headline text reduced per owner request (text-3xl→5xl, left-aligned, single mask-reveal line), per-slide kicker labels, copper underline, both CTAs on every slide
+- Round prev/next arrows at edges, 01—04 indicator with animated progress bar, mouse parallax on slide images, preloader gating preserved
+- Verified: auto-advance 01→02, next →03, prev →02, quote modal opens from hero
+
 ## Backlog
 - P0: none blocking
 - P1: Real company name/logo/contact details replacement; working quote form (backend persistence + email notification)
