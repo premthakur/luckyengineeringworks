@@ -62,11 +62,11 @@ export const Navbar = ({ onQuote }) => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ml-10 lg:ml-20">
             <button
               onClick={onQuote}
               data-testid="nav-quote-button"
-              className="hidden sm:inline-flex items-center gap-2 bg-copper hover:bg-copper-hover text-white text-[13px] font-semibold tracking-[0.12em] uppercase px-6 py-3 transition-colors duration-300"
+              className="hidden sm:inline-flex items-center gap-2 bg-copper hover:bg-copper-hover text-white text-[13px] font-semibold tracking-[0.12em] uppercase px-6 py-3 whitespace-nowrap transition-colors duration-300"
             >
               Request a Quote
               <ArrowUpRight size={15} />
