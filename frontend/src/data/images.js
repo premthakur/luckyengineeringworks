@@ -2,7 +2,7 @@ const U = (id, w = 1600) => `${id}&w=${w}&auto=format`;
 
 export const IMAGES = {
   hero: "/frontend/public/images/hero.jpg",
-  about: "/images/about.jpg",
+  about: "frontend/public/images/about.jpg",
   components: "/images/components.jpg",
   quality: "/images/quality.jpg",
   cnc: "/images/cnc.jpg",
